@@ -32,6 +32,10 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need your permission to use the microphone.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+  	<string>We need your permission for speech recognition</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>

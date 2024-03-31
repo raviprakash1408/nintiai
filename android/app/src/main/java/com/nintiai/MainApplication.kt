@@ -11,6 +11,8 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
+import com.wenkesj.voice.VoicePackage;
+import com.rnfs.RNFSPackage;
 
 class MainApplication : Application(), ReactApplication {
 
@@ -20,6 +22,7 @@ class MainApplication : Application(), ReactApplication {
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
+              new VoicePackage()
             }
 
         override fun getJSMainModuleName(): String = "index"
@@ -42,4 +45,12 @@ class MainApplication : Application(), ReactApplication {
     }
     ReactNativeFlipper.initializeFlipper(this, reactNativeHost.reactInstanceManager)
   }
+
+  @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new MainReactPackage(), // <---- add comma
+        new RNFSPackage() // <---------- add package
+      );
+    }
 }
